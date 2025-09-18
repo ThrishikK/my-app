@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import "./App.css";
+import "./ReducerOne.css";
 
 const initialState = { value: 0 };
 
@@ -14,7 +14,7 @@ function reducer(state, action) {
   }
 }
 
-function App() {
+function ReducerOne() {
   // console.log(useReducer(reducer, initialState));
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(dispatch);
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default ReducerOne;

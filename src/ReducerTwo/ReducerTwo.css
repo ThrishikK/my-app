@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  background-color: rgb(85, 6, 160);
+  color: whitesmoke;
+  cursor: pointer;
+  padding: 10px 5px;
+  border-radius: 5px;
+  width: 50px;
+}

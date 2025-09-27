@@ -1,4 +1,4 @@
-.main {
+.recursion-main {
   /* max-width: 1200px; */
   margin: 10px;
   /*  */
@@ -60,6 +60,20 @@ button:hover {
 
 .comment-owner {
   text-transform: uppercase;
+  /*  */
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.comment-owner-letter {
+  background-color: #420a81;
+  width: 25px;
+  height: 25px;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .comment-text {

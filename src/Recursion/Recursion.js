@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PageNav from "../PageNav/PageNav";
 import initialComments from "./comments";
 import "./Recursion.css";
 
@@ -77,7 +78,10 @@ function Comment({ comment, path, onAddReply }) {
     <div className="comment">
       {/* COMMENT DETAILS */}
       <div className="comment-details">
-        <strong className="comment-owner">{comment.user}</strong>
+        <div className="comment-owner">
+          <strong className="comment-owner-letter">{comment.user.at(0)}</strong>
+          <strong>{comment.user}</strong>
+        </div>
         <p className="comment-text">{comment.text}</p>
       </div>
       {/* COMMENT ACTIONS */}
@@ -145,14 +149,24 @@ function Recursion() {
   }
 
   return (
-    <div className="main">
-      <h2>Recursive Rendering Comments</h2>
-      {/* CALLING ROOT COMMENT FORM*/}
-      <RenderRootCommentForm onAddRootComment={(c) => handleAddReply([], c)} />
-      <div className="comments-list">
-        {comments.map((c, i) => (
-          <Comment key={i} comment={c} path={[i]} onAddReply={handleAddReply} />
-        ))}
+    <div>
+      <PageNav />
+      <div className="recursion-main">
+        <h2>Recursive Rendering Comments</h2>
+        {/* CALLING ROOT COMMENT FORM*/}
+        <RenderRootCommentForm
+          onAddRootComment={(c) => handleAddReply([], c)}
+        />
+        <div className="comments-list">
+          {comments.map((c, i) => (
+            <Comment
+              key={i}
+              comment={c}
+              path={[i]}
+              onAddReply={handleAddReply}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
